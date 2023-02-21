@@ -1,7 +1,9 @@
 .topo {
   width: 100%;
   height: 64px;
-  background: black;
+  background: #333333;
+  border: solid 4px #000000;
+  box-sizing: border-box;
   color: white;
   border-radius: 0px 0px 10px 10px;
   display: flex;
@@ -31,7 +33,7 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 84px;
+  margin: 64px 0px;
 }
 
 .pokemon {
@@ -59,6 +61,46 @@
   font-weight: 500;
 }
 
-.pokemon:last-child {
-  background: #ff0000;
+.menu {
+  width: 100%;
+  height: 74px;
+  background: #cc0000;
+  border-radius: 20px 20px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  border: solid 4px #990000;
+}
+
+.circle {
+  background: #3366ff;
+  box-sizing: border-box;
+  border: solid 6px #3333ff;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.seta {
+  background: black;
+  width: 48px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.bright {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: white;
 }

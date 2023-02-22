@@ -1,3 +1,6 @@
+let limit = 12;
+let init = 0;
+
 function getPokemon() {
   let pokemons = [];
 
@@ -7,7 +10,7 @@ function getPokemon() {
     function makePokemons(pokemons) {
       const container = document.querySelector(".container");
 
-      for (let i = 0; i < pokemons.length; i++) {
+      for (let i = 0; i < limit; i++) {
         const name =
           pokemons[i].name[0].toUpperCase() + pokemons[i].name.slice(1);
 
@@ -24,7 +27,7 @@ function getPokemon() {
               <img 
                   class="img-pokemon" 
                   src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                    i + 1
+                    i + 1 + init
                   }.png" 
                   alt="pokemon" 
               />
@@ -37,7 +40,7 @@ function getPokemon() {
   }
 
   const promise = axios.get(
-    "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
+    `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${init}`
   );
 
   promise.then(carregarPokemons);
@@ -52,6 +55,27 @@ function toCapture(element) {
     : "https://w7.pngwing.com/pngs/213/264/png-transparent-poke-ball-coloring-book-drawing-pokemon-sun-and-moon-pokemon-comics-angle-text.png";
 
   element.querySelector(".capture").setAttribute("src", imgUrl);
+}
+
+function muchPokemons() {
+  const container = document.querySelector(".container");
+  container.innerHTML = "";
+
+  init += 12;
+
+  getPokemon();
+}
+
+function lessPokemons() {
+  const container = document.querySelector(".container");
+
+  if (init <= 0) {
+    init = 0;
+  } else {
+    init -= 12;
+    container.innerHTML = "";
+    getPokemon();
+  }
 }
 
 getPokemon();

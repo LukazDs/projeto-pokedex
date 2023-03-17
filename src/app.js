@@ -1,4 +1,4 @@
-let limit = 12;
+let limit = 14;
 let init = 0;
 
 function getPokemon() {
@@ -59,9 +59,8 @@ function toCapture(element) {
 
 function muchPokemons() {
   const container = document.querySelector(".container");
+  init += 14;
   container.innerHTML = "";
-
-  init += 12;
 
   getPokemon();
 }
@@ -72,8 +71,9 @@ function lessPokemons() {
   if (init <= 0) {
     init = 0;
   } else {
-    init -= 12;
+    init -= 14;
     container.innerHTML = "";
+
     getPokemon();
   }
 }

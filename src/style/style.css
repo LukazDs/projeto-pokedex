@@ -45,6 +45,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin: 72px 0px;
+  padding: 78px 0;
 }
 
 .pokemon {
@@ -95,12 +96,8 @@ body {
   height: 74px;
   background: #cc0000;
   border-radius: 20px 20px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   bottom: 0;
-
   display: flex;
   justify-content: space-around;
   align-items: center;

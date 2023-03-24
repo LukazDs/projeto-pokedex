@@ -1,7 +1,6 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -44,8 +43,27 @@ body {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 72px 0px;
-  padding: 78px 0;
+  position: absolute;
+  top: 64px;
+  padding-bottom: 74px;
+  padding-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 0;
+    padding-bottom: 94px;
+  }
+}
+
+.pokedex-number {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .pokemon {
@@ -108,7 +126,7 @@ body {
 .circle {
   background: #3366ff;
   box-sizing: border-box;
-  border: solid 6px #3333ff;
+  cursor: pointer;
   width: 64px;
   height: 64px;
   border-radius: 32px;

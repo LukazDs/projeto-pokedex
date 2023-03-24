@@ -24,6 +24,7 @@ function getPokemon() {
                 src="https://w7.pngwing.com/pngs/213/264/png-transparent-poke-ball-coloring-book-drawing-pokemon-sun-and-moon-pokemon-comics-angle-text.png"
                 alt="poke"
               />
+              <h1 class="pokedex-number">${i + 1 + init}</h1>
               <img 
                   class="img-pokemon" 
                   src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
@@ -72,6 +73,19 @@ function lessPokemons() {
     init = 0;
   } else {
     init -= 14;
+    container.innerHTML = "";
+
+    getPokemon();
+  }
+}
+
+function findPokemon() {
+  const id = prompt("Nº Pokedex: ");
+  const container = document.querySelector(".container");
+
+  init = Number(id) - 1;
+
+  if (init >= 0) {
     container.innerHTML = "";
 
     getPokemon();
